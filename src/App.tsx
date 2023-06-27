@@ -1,33 +1,44 @@
-import { useState } from 'react';
+import { Suspense } from 'react';
+import { Provider } from 'jotai';
+import { QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
+import { ErrorBoundary } from 'react-error-boundary';
+import { Route, Switch } from 'wouter';
 
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { globalStyles } from './config/stitches';
+import { queryClient } from './config/react-query';
+import { jotaiStore } from './config/jotai';
 
-import './App.css';
+import { Button } from './components/Button';
 
-function App() {
-    const [count, setCount] = useState(0);
+import { PostsPage } from './modules/posts/components/PostsPage';
+
+export function App() {
+    globalStyles();
 
     return (
-        <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-        </>
+        <Provider store={jotaiStore}>
+            <QueryClientProvider client={queryClient}>
+                <Suspense fallback={<div>Loading</div>}>
+                    <QueryErrorResetBoundary>
+                        {({ reset }) => (
+                            <ErrorBoundary
+                                onReset={reset}
+                                fallbackRender={({ error, resetErrorBoundary }) => (
+                                    <Button type="button" onClick={resetErrorBoundary}>
+                                        Error: {error.toString()}
+                                    </Button>
+                                )}
+                            >
+                                <Switch>
+                                    <Route path="/">
+                                        <PostsPage />
+                                    </Route>
+                                </Switch>
+                            </ErrorBoundary>
+                        )}
+                    </QueryErrorResetBoundary>
+                </Suspense>
+            </QueryClientProvider>
+        </Provider>
     );
 }
-
-export default App;
