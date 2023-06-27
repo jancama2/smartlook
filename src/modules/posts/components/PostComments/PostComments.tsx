@@ -9,9 +9,12 @@ const CommentsWrapper = styled('section', {
 });
 
 const Comment = styled('article', {
-    paddingLeft: '1rem',
+    '@md': {
+        paddingLeft: '1rem',
 
-    borderLeft: '2px solid lightgrey',
+        borderLeft: '2px solid',
+        borderLeftColor: '$grey300',
+    },
 });
 
 const CommentHeading = styled('h4', {
@@ -23,7 +26,7 @@ const CommentBody = styled('p', {
 });
 
 const CommentAuthor = styled('strong', {
-    fontSize: '0.875rem',
+    fontSize: '0.875em',
 });
 
 export interface PostCommentsProps {

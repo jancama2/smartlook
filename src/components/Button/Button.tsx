@@ -3,11 +3,11 @@ import { styled } from '../../config/stitches';
 export const Button = styled('button', {
     padding: '0.6em 1.2em',
 
-    fontSize: '1rem',
+    fontSize: '1em',
     fontWeight: 500,
     fontFamily: 'inherit',
 
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '$grey900',
 
     borderRadius: '0.5rem',
     border: '1px solid transparent',
@@ -15,21 +15,19 @@ export const Button = styled('button', {
     cursor: 'pointer',
     transition: 'border-color 0.25s',
 
-    ':hover': {
-        borderColor: '#646cff',
+    '&:hover': {
+        borderColor: '$blue200',
     },
 
-    ':focus': {
+    '&:focus': {
         outline: '4px auto -webkit-focus-ring-color',
     },
 
-    ':focus-visible': {
+    '&:focus-visible': {
         outline: '4px auto -webkit-focus-ring-color',
     },
 
-    '@media (prefers-color-scheme: light)': {
-        button: {
-            backgroundColor: '#f9f9f9',
-        },
+    '@light': {
+        backgroundColor: '$grey100',
     },
 });
