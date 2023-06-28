@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.1"></a>
+
+## 1.0.1 (2023-06-28)
+
+### Changed
+
+-   🔧 Add .yarnrc [[249fe92](https://github.com/jancama2/smartlook/commit/249fe920bc87f9a5ed77cabc9676003e534b0435)]
+
 <a name="1.0.0"></a>
 
 ## 1.0.0 (2023-06-28)
