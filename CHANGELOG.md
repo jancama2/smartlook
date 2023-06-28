@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.0.2"></a>
+## 1.0.2 (2023-06-28)
+
+### Changed
+
+- 🔧 Keep public folder in git [[62a9c15](https://github.com/jancama2/smartlook/commit/62a9c15a76a65ffffe1352bca5e3dbd990e60fc5)]
+
+
 <a name="1.0.1"></a>
 
 ## 1.0.1 (2023-06-28)
