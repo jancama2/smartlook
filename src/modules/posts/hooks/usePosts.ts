@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { entityFetcher } from '../../../utils/entities';
 
-import { IPost } from '../types';
+import type { IPost } from '../types';
 
 const getPosts = entityFetcher<IPost[]>('/posts');
 

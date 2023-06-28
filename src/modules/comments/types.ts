@@ -1,4 +1,4 @@
-import { IPost } from '../posts/types';
+import type { IPost } from '../posts/types';
 
 export interface IComment {
     id: number;

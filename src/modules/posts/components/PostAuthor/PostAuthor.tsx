@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+
 import { useUser } from '../../../users/hooks/useUser';
 import type { IUser } from '../../../users/types';
 

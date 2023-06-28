@@ -2,7 +2,7 @@ import { usePosts } from '../../hooks/usePosts';
 
 import { Post } from '../Post';
 
-export const PostsPage = () => {
+export const PostsList = () => {
     const posts = usePosts();
 
     if (posts) {

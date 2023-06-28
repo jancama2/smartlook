@@ -1,6 +1,6 @@
 import { styled } from '../../../../config/stitches';
 
-import { IPost } from '../../types';
+import type { IPost } from '../../types';
 
 import { useTogglePostComments } from '../../hooks/useTogglePostComments';
 

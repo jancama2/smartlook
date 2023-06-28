@@ -1,6 +1,6 @@
 import { atom, useAtom } from 'jotai';
 
-import { IPost } from '../types';
+import type { IPost } from '../types';
 
 const togglePostComments = atom<IPost['id'] | null>(null);
 

@@ -9,7 +9,7 @@ import { IComment } from '../types';
 const getComments = entityFetcher<IComment[]>(({ queryKey }) => `/posts/${queryKey[0]}/comments`);
 
 export const useComments = (id: IPost['id']) => {
-    const query = useQuery({ queryKey: [id, 'Comments'], queryFn: getComments });
+    const query = useQuery({ queryKey: [id, 'comments'], queryFn: getComments });
 
     return query.data;
 };
