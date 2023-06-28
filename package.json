@@ -1,14 +1,15 @@
 {
     "name": "smartlook-task",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
         "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
-        "format": "prettier --write"
+        "format": "prettier . --write",
+        "version": "gitmoji-changelog && code --wait CHANGELOG.md && git add CHANGELOG.md"
     },
     "dependencies": {
         "@radix-ui/react-dialog": "^1.0.4",
@@ -31,6 +32,7 @@
         "eslint": "^8.38.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.3.4",
+        "gitmoji-changelog": "^2.3.0",
         "prettier": "^2.8.8",
         "typescript": "^5.0.2",
         "vite": "^4.3.9"
